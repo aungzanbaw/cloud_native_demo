@@ -1,8 +1,8 @@
 FROM golang:alpine
-LABEL maintainer="Aung Zan Baw"
-COPY /go/src/app
 WORKDIR /go/src/app 
-RUN 
-
-# command to run on container start 
-CMD ["python","app.py"]
+LABEL maintainer="Aung Zan Baw"
+ADD . .
+RUN go build -o helloworld main.go
+EXPOSE 6111
+# command to run on container start, compile first then serve binary 
+CMD ["./helloworld"]
