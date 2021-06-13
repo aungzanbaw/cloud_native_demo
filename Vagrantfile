@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "15.3.9.88"
   
   # st the static IP for the vagrant box
-  config.vm.network "private_network", ip: "192.168.50.4"
+  config.vm.network "private_network", ip: "192.168.50.4", auto_config: false
   
   # consifure the parameters for VirtualBox provider
   config.vm.provider "virtualbox" do |vb|
