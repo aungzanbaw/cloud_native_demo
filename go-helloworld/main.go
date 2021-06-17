@@ -1,5 +1,5 @@
-# Application version: v2.0.0
-# port exposed: 6112
+// Application version: v2.0.0
+// port exposed: 6112
 package main
 
 import (
