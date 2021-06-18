@@ -64,6 +64,8 @@ Exe 3.17
         # run alpine image on random pod in default namespace, make it interactive via ssh and remove after quit
         kubectl run test-$RANDOM --namespace=default --rm -it --image=alpine -- sh
 
+        # get data from given IP and Port, and present to current view
+        wget -qO- {IP}:{PORT} # it's capital O for Owl
     Useful 
         # get services, an abstraction layer over a collection of pods running an application
         kubectl get svc
