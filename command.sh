@@ -35,17 +35,23 @@ Exe 3.16
         kubectl create deploy {NAME} --image={DOCKER-HUB-NAME}/{TAG-NAME}
         
         # run the image, it's automatically started
-        kubtctl run 
+        kubtctl run {NAME} --image={DOCKER-HUB-NAME}/{TAG-NAME}
+
+        # port forward/exposed 
+        kubectl port-forward po/{NAME-OF-RUNNING-POD} 
         
+        # edit old deploy
+        kubectl edit deploy {NAME} -o yaml
+
     Useful 
         # get all pods
-        kubectl get po
+        kubectl get po # kubectl get pods
 
         # get replica set
-        kubectl get rs
+        kubectl get rs # kubectl get replicaset
 
         # get updates for pods and rs
-        kubectl get deploy # or deployments 
+        kubectl get deploy # kubectl get deployments 
 
         # delete deploy
-        kubectl delete deploy {name}
+        kubectl delete deploy {RUNNING-POD-NAME}
