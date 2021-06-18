@@ -38,7 +38,7 @@ Exe 3.16
         kubtctl run {NAME} --image={DOCKER-HUB-NAME}/{TAG-NAME}
 
         # port forward/exposed 
-        kubectl port-forward po/{NAME-OF-RUNNING-POD} 
+        kubectl port-forward po/{NAME-OF-RUNNING-POD} {PORT-EXTERNAL:PORT-INTERNAL}
         
         # edit old deploy
         kubectl edit deploy {NAME} -o yaml
@@ -55,3 +55,15 @@ Exe 3.16
 
         # delete deploy
         kubectl delete deploy {RUNNING-POD-NAME}
+
+Exe 3.17
+    Essential 
+        # expose/forward 
+        kubectl expose deploy {NAME} --port={PORT} --target-port={APPLICATION-PORT}
+
+        # run alpine image on random pod in default namespace, make it interactive via ssh and remove after quit
+        kubectl run test-$RANDOM --namespace=default --rm -it --image=alpine -- sh
+
+    Useful 
+        # get services, an abstraction layer over a collection of pods running an application
+        kubectl get svc
