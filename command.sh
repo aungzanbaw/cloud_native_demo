@@ -128,5 +128,8 @@ Exe 3.23
         # to edit/create kube commands as declarative approach
         kubectl get {NAME} {RESOURCE-NAME} -o yaml
 
+        # create new deploy using busybox & export to yaml file
+        kubectl create deploy busybox --image=busybox -r=5 -n demo --dry-run=client -o yaml > deploy.yaml
+
         # to apply minifest 
         kubectl apply -f deploy.yaml
