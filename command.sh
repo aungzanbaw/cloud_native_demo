@@ -133,3 +133,17 @@ Exe 3.23
 
         # to apply minifest 
         kubectl apply -f deploy.yaml
+
+Exe 4.5
+    Essential 
+        # use pip to install any application dependencies 
+        RUN pip install -r requirements.txt
+
+        # execute command  on the container start
+        CMD [ "python", "app.py" ]
+        
+        # build an image using a Dockerfile
+        docker build -t python-helloworld .
+
+        # store and distribute an image using DockerHub
+        docker push pixelpotato/python-helloworld:v1.0.0
