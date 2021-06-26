@@ -8,12 +8,14 @@ Exe 3.8
 
         # push the image
         docker push {DOCKER-HUB-NAME}/{TAG-NAME}
+    
     Useful
         # get all images 
         docker images
 
         # get processes status
         docker ps
+
 Exe 3.15
     Essential 
         # get control plan or add-ons endpoints 
@@ -66,6 +68,18 @@ Exe 3.17
 
         # get data from given IP and Port, and present to current view
         wget -qO- {IP}:{PORT} # it's capital O for Owl
+    
     Useful 
         # get services, an abstraction layer over a collection of pods running an application
         kubectl get svc
+
+Exe 3.18
+    Essential 
+        # purpose separate the configuration from the source code
+        # create configmap, --from-file(get from file) --from-literl (get from key-value pair)
+        kubectl create configmap {NAME}
+
+        # purpose to store sensitive data, ENV, mounted volume's files
+        # create secret, --from-file(get from file) --from-literl (get from key-value pair) 
+        kubectl create secret generic {NAME}
+        
