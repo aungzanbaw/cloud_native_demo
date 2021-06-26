@@ -33,7 +33,7 @@ Exe 3.15
 
 Exe 3.16
     Essential 
-        # create new deploy using given image
+        # create new deploy using given image, --replicas --namespace
         kubectl create deploy {NAME} --image={DOCKER-HUB-NAME}/{TAG-NAME}
         
         # run the image, it's automatically started
@@ -122,3 +122,11 @@ Exe 3.18
         
         # To delete resources 
         kubectl delete RESOURCE {NAME}
+
+Exe 3.23
+    Essential 
+        # to edit/create kube commands as declarative approach
+        kubectl get {NAME} {RESOURCE-NAME} -o yaml
+
+        # to apply minifest 
+        kubectl apply -f deploy.yaml
