@@ -76,10 +76,49 @@ Exe 3.17
 Exe 3.18
     Essential 
         # purpose separate the configuration from the source code
-        # create configmap, --from-file(get from file) --from-literl (get from key-value pair)
+        # create configmap, --from-file(get from file) --from-literal (get from key-value pair)
         kubectl create configmap {NAME}
 
         # purpose to store sensitive data, ENV, mounted volume's files
-        # create secret, --from-file(get from file) --from-literl (get from key-value pair) 
+        # create secret, --from-file(get from file) --from-literal (get from key-value pair) 
         kubectl create secret generic {NAME}
+
+        # get an output from kube secrets as yaml (encoded)
+        kubectl get secrets {SECRETS-NAME} -o yaml
+
+        # decoded secrete lieral from yaml
+        echo "TEXT-FROM-YAML-OUTPUT" | base64 -D
+
+        # get all namespaces 
+        kubectl get ns 
+
+        # create a namespace with the specified name
+        kubectl create ns {NAME}
+
+        # get all the pods into a created namespace 
+        kubectl get po -n {NS-NAME}
+    
+    Useful
+        # To create resources 
+        kubectl create RESOURCE {NAME} 
         
+        # To describe resources   
+        kubectl describe RESOURCE {NAME} 
+        
+        # To get resources 
+        kubectl get RESOURCE {NAME} [-o yaml]
+        
+        # To edit resources
+        kubectl edit RESOURCE {NAME} [-o yaml]
+        
+        # To label resources
+        kubectl label RESOURCE {NAME} [PARAMS]
+        
+        # To access resources through port-forward 
+        kubectl port-forward RESOURCE/{NAME} [PARAMS]
+
+        # To access logs from a resource 
+        kubectl logs RESOURCE/{NAME} [FLAGS]
+        
+        # To delete resources 
+        kubectl delete RESOURCE {NAME}
