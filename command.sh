@@ -147,3 +147,27 @@ Exe 4.5
 
         # store and distribute an image using DockerHub
         docker push pixelpotato/python-helloworld:v1.0.0
+
+Exe 5.13
+    Essential 
+        # deploy ArgoCD
+        kubectl create namespace argocd
+        kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+        
+        # get argocd-nginx.yaml from udacity site
+        kubectl apply -f argocd-nginx.yaml 
+    Useful
+        # get application under namespace argocd
+        kubectl get application -n argocd 
+        
+        # get all namespace
+        kubectl get ns
+
+        # get deploy under demo namespace
+        kubectl get deploy -n demo
+        
+        # get service under demo namespace
+        kubectl get svc -n demo
+
+        # get configuration map under demo namespace
+        kubectl get cm -n demo
