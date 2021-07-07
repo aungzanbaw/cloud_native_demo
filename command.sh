@@ -148,6 +148,30 @@ Exe 4.5
         # store and distribute an image using DockerHub
         docker push pixelpotato/python-helloworld:v1.0.0
 
+Exe 5.10
+    Essential 
+        # get all nodes
+        kubectl get no
+
+        # get all pods 
+        kubectl get pods -A
+
+        # follow installation guide from argo website
+
+        # get pods with namespace argocd 
+        kubectl get po -n argocd  
+
+        # get services with namespace argocd 
+        kubectl get svc -n argocd
+
+        # get services with namespace argocd & modify as yaml
+        kubectl get svc -n argocd argocd-server -o yaml
+        
+        # to expose nodePort from existing config yaml file
+        kubectl get svc -n argocd argocd-server -o yaml > argocd-nodeport.yaml
+    
+        # argo expose with specific nodeport
+        kubectl apply -f argocd-nodeport.yaml
 Exe 5.13
     Essential 
         # deploy ArgoCD
