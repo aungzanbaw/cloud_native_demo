@@ -172,6 +172,17 @@ Exe 5.10
     
         # argo expose with specific nodeport
         kubectl apply -f argocd-nodeport.yaml
+
+        # create argocd-python.yaml from udacity repo then apply it
+        kubectl apply -f argocd-python.yaml
+
+        # first sync or deploy on argo dashboard, then check running pods
+        kubectl get po -n argocd
+
+        # check your pod status
+        kubectl get po 
+
+        
 Exe 5.13
     Essential 
         # deploy ArgoCD
@@ -180,6 +191,9 @@ Exe 5.13
         
         # get argocd-nginx.yaml from udacity site
         kubectl apply -f argocd-nginx.yaml 
+
+        # expose ports for argocd server
+        kubectl port-forward svc/argocd-server -n argocd 8080:443
     Useful
         # get application under namespace argocd
         kubectl get application -n argocd 
