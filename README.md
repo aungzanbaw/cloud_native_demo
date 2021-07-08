@@ -21,3 +21,14 @@
 * Namespace - a logical separation between multiple applications and associated resources.
 * Imperative configuration - resource management technique, that operates and interacts directly with the live objects within the * cluster.
 * Declarative configuration - resource management technique, that operates and manages resources using YAML manifests stored locally.
+* On-premise - cloud-computing service, where a team owns the entire technology stack.
+* IaaS or Infrastructure as a Service - cloud-computing service that offers the abstraction of networking, storage, server, and virtualization layers.
+* PaaS or Platform as a Service - cloud-computing service, where the infrastructure components are managed fully by a 3rd party provider, and a team manages only the application and the data associated with it.
+* Cloud Foundry - an open-source PaaS offering, that can be hosted on any available infrastructure
+* FaaS or Function as a Service - event-driven cloud-computing service that requires only the application code to execute successfully.
+* Continuous Integration - a mechanism that produces the package of an application that can be deployed.
+* Continuous Delivery - a mechanism to push the packaged application through multiple environments, including production.
+* Continuous Deployment - a procedure that contains the Continuous Integration and Continuous Delivery of a product.
+* GitOps - an operating model that refers to the Git repositories as the source of truth for declarative infrastructure and applications.
+* Helm - package manager tool used to template a suite of Kubernetes manifests.
+* Helm chart - a collection of configuration, input, and templated YAML files used to deploy Kubernetes resources.
