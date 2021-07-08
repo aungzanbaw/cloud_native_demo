@@ -192,8 +192,12 @@ Exe 5.13
         # get argocd-nginx.yaml from udacity site
         kubectl apply -f argocd-nginx.yaml 
 
+        # get running application argocd namespace
+        kubectl get application -n argocd
+
         # expose ports for argocd server
         kubectl port-forward svc/argocd-server -n argocd 8080:443
+        
     Useful
         # get application under namespace argocd
         kubectl get application -n argocd 

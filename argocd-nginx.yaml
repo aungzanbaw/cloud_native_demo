@@ -9,8 +9,8 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: exercises/manifests 
-    repoURL: https://github.com/udacity/nd064_course_1 
+    path: manifests 
+    repoURL: https://github.com/aungzanbaw/cloud_native_demo
     targetRevision: HEAD
   # Sync policy
   syncPolicy: {}
